@@ -7,6 +7,7 @@
 import React from "react";
 
 import pythonIcon from "../images/languages/python.svg";
+import cplusplusIcon from "../images/languages/cplusplus.svg";
 
 /**
  * About background image
@@ -120,12 +121,27 @@ const About = () => {
           style={{
             display: "flex",
             justifyContent: "center",
-            gap: "2.5rem",
+            gap: "2rem",
           }}
         >
           {pythonIcon && (
-            <a href={`https://www.linkedin.com/in/`} target="_blank" rel="noopener noreferrer">
-              <img src={pythonIcon} alt="Python" className="socialIcon" />
+            <a href={`https://www.python.org/`} target="_blank" rel="noopener noreferrer">
+              <img
+                src={pythonIcon}
+                alt="Python"
+                className="socialIcon"
+                style={{ height: "70px", width: "50px" }}
+              />
+            </a>
+          )}
+          {cplusplusIcon && (
+            <a href={`https://www.python.org/`} target="_blank" rel="noopener noreferrer">
+              <img
+                src={cplusplusIcon}
+                alt="CPlusPlus"
+                className="socialIcon"
+                style={{ height: "70px", width: "50px" }}
+              />
             </a>
           )}
         </div>
