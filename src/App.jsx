@@ -25,14 +25,12 @@ import "./styles.css";
  */
 const siteProps = {
   name: "Leandro Henrique Barbosa",
-  title: "Web Designer & Content Creator",
-  email: "alex@example.com",
-  gitHub: "microsoft",
-  instagram: "microsoft",
-  linkedIn: "satyanadella",
-  medium: "",
-  twitter: "microsoft",
-  youTube: "Code",
+  title: "AI & Machine Learning Student",
+  email: "leandroh_99@outlook.com",
+  gitHub: "leandrohbar",
+  instagram: "leandrohbar",
+  linkedIn: "leandrohbar/",
+  twitter: "leandroh_99",
 };
 
 const primaryColor = "#4E567E";

@@ -6,11 +6,13 @@
 
 import React from "react";
 
+import pythonIcon from "../images/languages/python.svg";
+
 /**
  * About background image
  *
  * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
+ * directory and import here for use. Then, set imageAltText to string that
  * represents what you see in that image.
  *
  * Need an image? Check out https://unsplash.com to download a image you
@@ -24,19 +26,19 @@ const imageAltText = "purple and blue abstract background";
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "I'm a UI/UX student studying at Barnett Technical University. I enjoy creating unique and simplistic user interfaces in creative ways.";
+  "I'm a dedicated AI & Machine Learning enthusiast with a passion for crafting innovative and elegant solutions that harness the power of data-driven intelligence. My goal is to merge the complexity of AI algorithms with the simplicity of user experiences, creating cutting-edge applications that empower users through seamless, intelligent interactions.";
 
 /**
  * List of some of skills or technologies you work on, are learning,
  * passionate about, or enjoy,
  */
 const skillsList = [
-  "Web design",
-  "User experience",
-  "Inclusive design",
-  "Focus group testing",
-  "Mobile user interfaces",
-  "Graphic design",
+  "Python Expertise",
+  "Machine Learning Frameworks",
+  "Natural Language Processing (NLP)",
+  "Computer Vision",
+  "Deep Learning",
+  "Production Projects",
 ];
 
 /**
@@ -45,7 +47,12 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "I am passionate about solving problems in new creative ways to drive innovation. By leveraging my UI/UX experience I continually look for new and better ways to make tech accessible by all.";
+  "-Proficiency in Python for AI and Machine Learning solutions development.\n" +
+  "-Experience with TensorFlow, PyTorch, and Scikit-Learn for building ML models.\n" +
+  "-Practical applications of NLP in text analysis projects and chatbots.\n" +
+  "-Working with CNNs and object detection in images using OpenCV.\n" +
+  "-Implementing deep neural networks for classification and regression tasks.\n" +
+  "-Developing and deploying ML models in production to solve real-world problems.";
 
 const About = () => {
   return (
@@ -53,7 +60,13 @@ const About = () => {
       <img className="background" src={image} alt={imageAltText} />
       <div
         style={{
-          backgroundColor: "white",
+          letterSpacing: "0.02em",
+          color: "#fff",
+          fontSize: "24px",
+          lineHeight: "1.3",
+          fontWeight: 500,
+          fontFamily: "Materialiconsround, sans-serif",
+          backgroundColor: "black",
           width: "50%",
           padding: "4rem",
           margin: "3rem auto",
@@ -65,9 +78,14 @@ const About = () => {
         <hr />
         <ul
           style={{
+            letterSpacing: "0.02em",
+            color: "#fff",
+            fontSize: "20px",
+            lineHeight: "1.6",
+            fontWeight: 500,
+            fontFamily: "Materialiconsround, sans-serif",
             textAlign: "left",
             columns: 2,
-            fontSize: "1.25rem",
             margin: "2rem 3rem",
             gap: "3rem",
           }}
@@ -77,7 +95,40 @@ const About = () => {
           ))}
         </ul>
         <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+        <p
+          style={{
+            letterSpacing: "0.02em",
+            color: "#fff",
+            fontSize: "24px",
+            lineHeight: "1.5",
+            fontWeight: 500,
+            fontFamily: "Materialiconsround, sans-serif",
+            padding: "1rem 3rem 0",
+            textAlign: "left",
+          }}
+        >
+          {detailOrQuote.split("\n").map((item, key) => {
+            return (
+              <span key={key}>
+                {item}
+                <br />
+              </span>
+            );
+          })}
+        </p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "2.5rem",
+          }}
+        >
+          {pythonIcon && (
+            <a href={`https://www.linkedin.com/in/`} target="_blank" rel="noopener noreferrer">
+              <img src={pythonIcon} alt="Python" className="socialIcon" />
+            </a>
+          )}
+        </div>
       </div>
     </section>
   );
