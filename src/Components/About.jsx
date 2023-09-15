@@ -7,7 +7,9 @@
 import React from "react";
 
 import pythonIcon from "../images/languages/python.svg";
-import cplusplusIcon from "../images/languages/cplusplus.svg";
+import pytorchicon from "../images/languages/pytorch.svg";
+import tensorflowicon from "../images/languages/tensorflow.svg";
+import opencv from "../images/languages/opencv.svg";
 
 /**
  * About background image
@@ -19,7 +21,7 @@ import cplusplusIcon from "../images/languages/cplusplus.svg";
  * Need an image? Check out https://unsplash.com to download a image you
  * freely use on your site.
  */
-import image from "../images/motion-background.jpg";
+import image from "../images/apple-1868496_1920.jpg";
 
 const imageAltText = "purple and blue abstract background";
 
@@ -48,12 +50,12 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "-Proficiency in Python for AI and Machine Learning solutions development.\n" +
-  "-Experience with TensorFlow, PyTorch, and Scikit-Learn for building ML models.\n" +
-  "-Practical applications of NLP in text analysis projects and chatbots.\n" +
-  "-Working with CNNs and object detection in images using OpenCV.\n" +
-  "-Implementing deep neural networks for classification and regression tasks.\n" +
-  "-Developing and deploying ML models in production to solve real-world problems.";
+  "- Proficiency in Python for AI and Machine Learning solutions development.\n" +
+  "- Experience with TensorFlow, PyTorch, and Scikit-Learn for building ML models.\n" +
+  "- Practical applications of NLP in text analysis projects and chatbots.\n" +
+  "- Working with CNNs and object detection in images using OpenCV.\n" +
+  "- Implementing deep neural networks for classification and regression tasks.\n" +
+  "- Developing and deploying ML models in production to solve real-world problems.";
 
 const About = () => {
   return (
@@ -92,7 +94,9 @@ const About = () => {
           }}
         >
           {skillsList.map((skill) => (
-            <li key={skill}>{skill}</li>
+            <li key={skill} style={{ listStyleType: "disc" }}>
+              {skill}
+            </li>
           ))}
         </ul>
         <hr />
@@ -134,11 +138,31 @@ const About = () => {
               />
             </a>
           )}
-          {cplusplusIcon && (
-            <a href={`https://www.python.org/`} target="_blank" rel="noopener noreferrer">
+          {pytorchicon && (
+            <a href={`https://pytorch.org/`} target="_blank" rel="noopener noreferrer">
               <img
-                src={cplusplusIcon}
-                alt="CPlusPlus"
+                src={pytorchicon}
+                alt="pytorch"
+                className="socialIcon"
+                style={{ height: "70px", width: "50px" }}
+              />
+            </a>
+          )}
+          {tensorflowicon && (
+            <a href={`https://www.tensorflow.org/`} target="_blank" rel="noopener noreferrer">
+              <img
+                src={tensorflowicon}
+                alt="tensorflow"
+                className="socialIcon"
+                style={{ height: "70px", width: "50px" }}
+              />
+            </a>
+          )}
+          {opencv && (
+            <a href={`https://opencv.org/`} target="_blank" rel="noopener noreferrer">
+              <img
+                src={opencv}
+                alt="opencv"
                 className="socialIcon"
                 style={{ height: "70px", width: "50px" }}
               />
