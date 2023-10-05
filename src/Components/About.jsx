@@ -29,19 +29,68 @@ const imageAltText = "purple and blue abstract background";
  * Sort description that expands on your title on the Home component.
  */
 const description =
-  "I'm a dedicated AI & Machine Learning enthusiast with a passion for crafting innovative and elegant solutions that harness the power of data-driven intelligence. My goal is to merge the complexity of AI algorithms with the simplicity of user experiences, creating cutting-edge applications that empower users through seamless, intelligent interactions.";
+  "Sobre Mim\n" +
+  "Bem-vindo ao meu portfólio em constante evolução! Estou em uma emocionante jornada de transição de carreira, explorando o emocionante mundo da AI & Machine Learning, enquanto desenvolvo habilidades sólidas em Python e C# .NET Development.\n\n" +
+  "Minha Jornada\n" +
+  "Minha paixão por tecnologia sempre esteve presente, e agora estou comprometido em transformar esse interesse em uma carreira promissora. Meus estudos e projetos me permitiram adquirir um entendimento sólido desses campos empolgantes, mas estou ansioso para aplicar meu conhecimento em desafios do mundo real.\n\n";
 
 /**
  * List of some of skills or technologies you work on, are learning,
  * passionate about, or enjoy,
  */
 const skillsList = [
-  "Python Expertise",
-  "Machine Learning Frameworks",
-  "Natural Language Processing (NLP)",
-  "Computer Vision",
-  "Deep Learning",
-  "Production Projects",
+  {
+    title: "Versionamento de Código:",
+    topics: [
+      "Conhecimento em sistemas de controle de versão, como Git e GitHub.",
+      "Familiaridade com o uso de Git para colaboração em projetos.",
+      "Colaboração eficaz em equipes distribuídas usando ferramentas de controle de versão.",
+    ],
+  },
+  {
+    title: "Desenvolvimento em C#:",
+    topics: [
+      "Experiência em desenvolvimento de aplicativos e projetos simples com C#.",
+      "Projetos iniciais que demonstram minhas habilidades em C#.",
+      "Ampla experiência no desenvolvimento de aplicativos e sistemas utilizando C#",
+    ],
+  },
+  {
+    title: "Desenvolvimento Ágil:",
+    topics: [
+      "Conhecimento de metodologias ágeis, como Scrum e Kanban.",
+      "Disposição para se adaptar a mudanças e aprender com experiências anteriores.",
+      "Aprendizado contínuo sobre o Scrum e sua implementação.",
+    ],
+  },
+  {
+    title: "Integração de APIs:",
+    topics: [
+      "Experiência com integração de APIs básicas em projetos pequenos.",
+      "Disposição para explorar e aprender mais sobre integração de APIs.",
+    ],
+  },
+  {
+    title: "Teste e Depuração:",
+    topics: [
+      "Noções de teste de unidade, teste de integração e depuração de código.",
+      "Foco em melhorar a qualidade do código com a prática.",
+    ],
+  },
+  {
+    title: "Colaboração em Equipe:",
+    topics: [
+      "Habilidade de trabalhar bem em equipes e aprender com colegas mais experientes.",
+      "Comunicação eficaz e disposição para colaborar.",
+    ],
+  },
+  {
+    title: "Autoaprendizado e Desenvolvimento Contínuo:",
+    topics: [
+      "Compromisso em continuar aprendendo e aprimorando habilidades.",
+      "Exploração de cursos e recursos educacionais disponíveis.",
+    ],
+  },
 ];
 
 /**
@@ -50,12 +99,12 @@ const skillsList = [
  * about you on a professional level.
  */
 const detailOrQuote =
-  "- Proficiency in Python for AI and Machine Learning solutions development.\n" +
-  "- Experience with TensorFlow, PyTorch, and Scikit-Learn for building ML models.\n" +
-  "- Practical applications of NLP in text analysis projects and chatbots.\n" +
-  "- Working with CNNs and object detection in images using OpenCV.\n" +
-  "- Implementing deep neural networks for classification and regression tasks.\n" +
-  "- Developing and deploying ML models in production to solve real-world problems.";
+  "AI & Machine Learning\n" +
+  "Minha fascinação pela Inteligência Artificial e Aprendizado de Máquina é o motor que impulsiona meu aprendizado. Estou dedicando tempo para dominar algoritmos, criar modelos preditivos e explorar as possibilidades infinitas que a AI oferece.\n\n" +
+  "Desenvolvimento em Python e C# .NET\n" +
+  "Tornar-me proficiente em Python e C# .NET é uma parte vital da minha jornada. Essas linguagens versáteis e poderosas são ferramentas essenciais para transformar minhas ideias em soluções práticas.\n\n" +
+  "Este portfólio é um reflexo do meu compromisso com a aprendizagem contínua e com a busca de oportunidades para aplicar meu conhecimento em projetos desafiadores. Se você compartilha minha paixão por tecnologia e está em busca de colaboradores ou mentores, entre em contato. Estou animado para explorar novos horizontes e contribuir para o mundo da tecnologia.\n\n" +
+  "Junte-se a mim nesta jornada de transformação e descoberta. O futuro está à nossa espera!";
 
 const About = () => {
   return (
@@ -65,7 +114,7 @@ const About = () => {
         style={{
           letterSpacing: "0.02em",
           color: "#fff",
-          fontSize: "24px",
+          fontSize: "20px",
           lineHeight: "1.3",
           fontWeight: 500,
           fontFamily: "Materialiconsround, sans-serif",
@@ -83,7 +132,7 @@ const About = () => {
           style={{
             letterSpacing: "0.02em",
             color: "#fff",
-            fontSize: "20px",
+            fontSize: "17px",
             lineHeight: "1.6",
             fontWeight: 500,
             fontFamily: "Materialiconsround, sans-serif",
@@ -93,9 +142,21 @@ const About = () => {
             gap: "3rem",
           }}
         >
-          {skillsList.map((skill) => (
-            <li key={skill} style={{ listStyleType: "disc" }}>
-              {skill}
+          {skillsList.map((skill, index) => (
+            <li
+            key={index}
+            style={{
+              marginBottom: "2rem",
+              listStyleImage: `url('src/images/languages/rocket-svgrepo-com.svg')`,
+            }}>
+              <strong>{skill.title}</strong>
+              {skill.topics && skill.topics.length > 0 && (
+                <ul style={{ listStyle: "none", padding: 0 }}>
+                  {skill.topics.map((topic, topicIndex) => (
+                    <li key={topicIndex}>{topic}</li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>
@@ -104,7 +165,7 @@ const About = () => {
           style={{
             letterSpacing: "0.02em",
             color: "#fff",
-            fontSize: "24px",
+            fontSize: "20px",
             lineHeight: "1.5",
             fontWeight: 500,
             fontFamily: "Materialiconsround, sans-serif",
